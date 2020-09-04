@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+{%load static%}
+{%load course%}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>SmartLearn</title>
+    <!-- css styles -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- font icons -->
+    <script src="https://kit.fontawesome.com/15d9c82970.js"></script>
+
+    <!-- javascript and jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,400,900|Ubuntu:400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section id="title">
+      <!-- Nav Bar -->
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="">SmartLearn</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="navbar-item">
+                <a class="nav-link" style="color: white;" href="#footer">Contact Us</a>
+              </li>
+
+                {% if request.user.is_authenticated %}
+
+                {%if request.user|has_group:"Instructors"%}
+                <li class="navbar-item"><a class="nav-link" href="{% url "manage_course_list"%}" style="font-size:1.5em; color: white;">Courses Created</a></li>
+                <li class="navbar-item"><a class="nav-link" href="{% url "student_course_list"%}" style="font-size:1.5em; color: white;">Courses Enrolled</a></li>
+                <li class="navbar-item"><a class="nav-link" href="{% url "logout" %}" style="font-size: 1.5em; color: white;">Sign out</a></li>
+                {% else %}
+                <li class="navbar-item"><a class="nav-link" href="{% url "student_course_list"%}" style="font-size:1.5em; color: white;">My Courses</a></li>
+                <li class="navbar-item"><a class="nav-link" href="{% url "logout" %}" style="font-size: 1.5em; color: white;">Sign out </a></li>
+                {% endif %}
+
+
+              {% else %}
+                <li><a class="nav-link" href="{% url "login" %}" style="font-size: 1.5em;color: white;" >Sign in</a></li>
+              {% endif %}
+
+
+              <li class="navbar-item">
+                <a class="nav-link" style="color: white;" href='{% url "course_list" %}'>Courses</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Title -->
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h1>Learn the smart way!</h1>
+            <button type="button" onclick='location.href="{% url "course_list" %}"' class="btn btn-dark btn-lg dbutton">
+              <i class="fa fa-book"></i> View Courses
+            </button>
+          </div>
+          <div class="col-lg-6">
+            <img
+              class="title-img"
+              src="{%static 'images/cover.png'%}"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+
+    <section id="features">
+      <div class="mm row">
+        <div class="box col-lg-4">
+          <i class="icon fas fa-check-circle"></i>
+          <h3>Easy to use.</h3>
+          <p>So easy to use, even your dog could do it.</p>
+        </div>
+
+        <div class="box col-lg-4">
+          <i class="icon fas fa-bullseye"></i>
+          <h3>Elite Clientele</h3>
+          <p>For students who wish to make a difference.</p>
+        </div>
+        <div class="box col-lg-4">
+          <i class="icon fas fa-heart"></i>
+          <h3>Guaranteed to work.</h3>
+          <p>Trusted by the most prestigious institutions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+
+    <section id="testimonials">
+      <div id="tindog-reviews" class="carousel slide" data-ride="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h2>
+               Smartlearn provides the most important skills in industry and academy. In particular, I enjoyed the tutorials on programming and management. Highly recommended!
+            </h2>
+            <img class="dog-pic" src="https://media.wired.com/photos/593283809be5e55af6c25915/master/w_1000,c_limit/ff-mat-honan-password-hacker_f.jpg" alt="dog-profile" />
+            <em>Steven Miller, Hyderabad</em>
+          </div>
+          <div class="carousel-item">
+            <h2 class="testimonial-text">
+              Smartlearn has allowed me to complete my college courses with ease. Couldn't be more satisfied.
+            </h2>
+            <img class="dog-pic" src="https://us.123rf.com/450wm/olesiabilkei/olesiabilkei1901/olesiabilkei190100003/116454440-shoulder-portrait-of-thirty-years-old-bearded-man.jpg?ver=6" alt="lady-profile" />
+            <em>Dickinson Patty, Illinois</em>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#tindog-reviews"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#tindog-reviews"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Press -->
+
+    <section id="press">
+      <img class="sponsers" src="{%static 'images/nehru.png'%}" alt="" />
+
+      <img class="sponsers" src="{%static 'images/isro.png'%}" alt="" />
+      <img class="sponsers" src="{%static 'images/mit.png'%}" alt="" />
+      <img
+        class="sponsers"
+        src="{%static 'images/berk.png'%}"
+        alt="biz-insider-logo"
+      />
+    </section>
+
+    <!-- Pricing -->
+
+    <section id="pricing">
+      <h2>Featured Courses </h2>
+      <p></p>
+
+      <div class="row">
+        <div class="pricing-col col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>CS 101</h3>
+            </div>
+            <div class="card-body">
+               <img class="card-img-top" style="height:300px; position: sticky;" src="https://images.youracclaim.com/images/2fba8e3c-7087-4a06-a38a-ce7c730d076a/StraighterLine_course-badge_CS101.png" alt="">
+              <p>Core Programming Fundamentals</p>
+              <p>C language</p>
+              <p>10-12 weeks</p>
+              <button
+                class="btn btn-lg btn-block btn-outline-dark"
+                type="button"
+                onclick='location.href="{% url "course_detail" slug="cs101"%}"'
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing-col col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Medical Economics</h3>
+            </div>
+            <div class="card-body">
+              <img class="card-img-top"  style="height:300px; position: sticky;" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/9c/9fff103c3311e88cd10725b5e25cae/BOHC_Economics_Coursera_Course_Thumb.png?auto=format%2Ccompress&dpr=1" alt="">
+              <p>Microeconomics of the Health Industry</p>
+              <p>Certified by NHS</p>
+              <p>4-5 weeks</p>
+              <button class="btn btn-lg btn-block btn-dark" type="button" onclick='location.href="{% url "course_detail" slug="med-econ"%}"' >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="pricing-col col-lg-4 col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3>Multivariable Calculus</h3>
+            </div>
+            <div class="card-body">
+              <img class="card-img-top" style="height:300px; position: sticky;" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Gradient_vectors_on_cos%28x%29%2Acos%28y%29.png" alt="">
+              <p>Multivariable Calculus</p>
+              <p>with Vector Analysis</p>
+              <p>10-12 weeks</p>
+              <button class="btn btn-lg btn-block btn-dark" type="button">
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+
+    <section id="cta" style="background-color:#3fad37;">
+      <div class="container-fluid">
+        <h3 class="finall">The best of online education is waiting for you !</h3>
+        <button type="button" class="btn btn-dark btn-lg gbutton">
+          <i class="fa fa-phone"></i> Call at 7982903241
+        </button>
+        <button type="button" class="btn btn-outline-light btn-lg gbutton">
+          <i class="fa fa-envelope"></i> Smartlearn@gmail.com
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer id="footer">
+      <i class="gg fab fa-twitter"></i>
+      <i class="gg fab fa-facebook-f"></i>
+      <i class="gg fab fa-instagram"></i>
+      <i class="gg far fa-envelope"></i>
+
+      <p class="last">© Copyright 2020 SmartLearn</p>
+    </footer>
+  </body>
+</html>

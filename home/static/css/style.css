@@ -1,0 +1,182 @@
+
+#title{
+  background-color: #3fad37;
+   color: white;
+}
+
+ h1{
+   font-family: "Montserrat",sans-serif;
+   line-height:1.5;
+   font-size: 3.2rem;
+   font-weight: 900;
+
+
+
+width:500px;
+}
+h3{
+  font-size: 1.3rem;
+  text-align: center;
+  font-family: "Montserrat",sans-serif;
+  font-weight: bold;
+  color: black;
+
+}
+
+h2{
+
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+p{
+
+  width: 100%;
+  margin: auto;
+
+}
+.box{
+  text-align: center;
+  padding: 4.5%;
+}
+.icon{
+  color:#3fad37;
+  width:auto;
+font-size: 3.7rem;
+margin-bottom: 1rem;
+}
+.icon:hover{
+  color: #ff4c68;
+}
+.mm{
+
+  color:#3fad37;
+}
+
+body{
+font-family: "Montserrat";
+}
+
+.navbar-brand{
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.container-fluid{
+  padding: 3% 10% 7%;
+}
+
+
+ .navbar{
+   font-family: 'Ubuntu', sans-serif;
+   padding: 0 0 4.5rem;
+ }
+
+ .navbar-item{
+   padding: 0px 18px;
+ }
+
+ .nav-link{
+   font-size: 1.5rem;
+   font-style: "Montserrat";
+   font-weight: 100;
+ }
+ .dbutton{
+   margin: 5% 3% 5% 0;
+ }
+ .gbutton{
+
+   margin: 3% 3% 0 0;
+
+
+ }
+ .title-img{
+   width:80%;
+   transform: rotate(25deg);
+   position: sticky ;
+   right: 30%;
+ }
+
+ .dog-pic{
+
+
+   border-radius: 100%;
+   width: 20%;
+   margin: 20px;
+ }
+ #features{
+   padding: 7% 15%;
+   background-color:white;
+   position: relative;
+   z-index: 1;
+ }
+
+
+
+ #testimonials{
+   background-color: #3fad37;
+
+   text-align: center;
+   color: white;
+
+
+ }
+ #press{
+   background-color: #3fad37;
+   text-align: center;
+   padding-bottom: 3%;
+
+
+ }
+.carousel-item{
+
+   padding: 7% 15%;
+}
+ .sponsers{
+
+   margin: 20px 20px 50px;
+   width: 15%;
+ }
+
+
+
+ #pricing{
+   padding: 100px;
+   text-align: center;
+ }
+ .pricing-col{
+   padding: 3% 2%;
+ }
+
+#cta{
+  background-color: #3fad37;
+  text-align: center;
+
+
+}
+.finall{
+  font-family: "Montserrat",sans-serif;
+  line-height:1.5;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+}
+#footer{
+  height: 200px;
+  text-align: center;
+}
+.last{
+
+  padding-top: 15px;
+}
+.gg{
+  width:1.5rem;
+  margin: 3px;
+  margin-top: 101px;
+
+}
+.gg:hover{
+  color: #ff4c68;
+}

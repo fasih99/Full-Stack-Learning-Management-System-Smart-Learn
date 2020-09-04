@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block title %}Log-in{% endblock %}
+
+{% block content %}
+  <h1>Log-in/Sign Up</h1>
+  <div class="module">
+    {% if form.errors %}
+      <p>Your username and password didn't match. Please try again.</p>
+    {% else %}
+      <p>Please, use the following form to log-in:</p>
+    {% endif %}
+    <div class="login-form">
+      <form href="{% url 'login' %}" method="post">
+        {% bootstrap_form form %}
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}"/>
+        <p></p>
+        <input class="btn btn-success" type="submit" value="Log-in">
+      </form>
+    </div>
+  </div>
+<div class="container">
+  <h2>New to SmartLearn ?</h2>
+  <h2>Get Started here <i class="far fa-hand-point-down"></i> </h2>
+  <button class="btn btn-success btn-lg" type="submit" onclick='location.href="{% url "student_registration" %}"'>
+   <i class="fa fa-wpforms"></i>  Sign Up/Register
+ </button>
+</div>
+
+{% endblock %}

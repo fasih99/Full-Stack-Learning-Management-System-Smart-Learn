@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% block title %}
+  {% if object %}
+    Edit course "{{ object.title }}"
+  {% else %}
+    Create a new course
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <h1>
+    {% if object %}
+      Edit course "{{ object.title }}"
+    {% else %}
+      Create a new course
+    {% endif %}
+  </h1>
+  <div class="module container">
+    <h2>Course info</h2>
+    <form class="container" enctype="multipart/form-data" action="" method="post">
+        {% csrf_token %}
+        {{ form.media }}
+        {{form.as_p}}
+      <p><input type="submit" value="Save Content"></p>
+    </form>
+    <script>var editor = new MediumEditor('.editable');</script>
+  </div>
+
+
+{% endblock %}
