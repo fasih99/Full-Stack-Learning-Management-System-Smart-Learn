@@ -113,7 +113,7 @@ class Text(ItemBase):
     # content = models.TextField()
 
 class File(ItemBase):
-    file = models.FileField(upload_to='media/files')
+    file = models.FileField()
 
 
 class Image(ItemBase):
