@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'atw@1l0@y3r&1@9vs_x$*3(d7d^ebys_i@xs@5t9f!_i#yiwsv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['smart-learn.herokuapp.com','127.0.0.1']
 
