@@ -8,6 +8,7 @@ from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 
 from ckeditor.fields import RichTextField
+import os;
 
 # Create your models here.
 class Subject(models.Model):
@@ -113,6 +114,7 @@ class Text(ItemBase):
 
 class File(ItemBase):
     file = models.FileField(upload_to='files')
+
 
 class Image(ItemBase):
        file = models.FileField(upload_to='images')
