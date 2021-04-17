@@ -5,12 +5,12 @@ A fully functional Learning Management System with Ajax integration for optimize
 To login as Instructor :
 
 username:instructor
-password:insta123
+password:insta1234
 
 To login as Student:
 
 username:student
-password:stud123
+password:stud1234
 
 
 To run this locally, open up a terminal and with Git installed, type
