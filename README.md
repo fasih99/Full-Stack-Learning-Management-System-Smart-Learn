@@ -5,7 +5,7 @@ A fully functional Learning Management System with Ajax integration for optimize
 To login as Instructor :
 
 username:instructor
-password:insta1234
+password:insta123
 
 To login as Student:
 
